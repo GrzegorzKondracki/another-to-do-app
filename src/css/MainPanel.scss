@@ -1,0 +1,38 @@
+.mainPanel {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+}
+
+.wrap {
+    background-color: #dae1e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+}
+
+.newTaskBtn {
+    background-color: #00909e;
+    color: #dae1e7;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+.newTaskBtn:hover {
+    background-color: #142850;
+    color: #dae1e7;
+}
+
+.wrap div:nth-child(2) {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.wrap div:nth-child(3), 
+.wrap div:nth-child(4),
+.wrap div:nth-child(5) {
+    margin-right: 20px;
+}
+
