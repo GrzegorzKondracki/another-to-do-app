@@ -1,0 +1,13 @@
+.task {
+  display: flex;
+}
+
+.task p {
+  flex-basis: 40%;
+  margin: 0 15px;
+}
+
+.task button {
+  width: 70px;
+  margin: 0 10px;
+}
