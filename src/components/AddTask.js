@@ -57,7 +57,7 @@ class AddTask extends Component {
                         <div>main panel</div>
 
                         <div className="form">
-                            <input type="text" className="addTaskInput" placeholder="add" onChange={this.handleText} value={this.state.text} />
+                            <input type="text" className="addTaskInput" placeholder="add task" onChange={this.handleText} value={this.state.text} />
 
                             <input type="date" value={this.state.deadline} min={this.minDate} max={maxDate} onChange={this.handleDate} className="deadline" />
 

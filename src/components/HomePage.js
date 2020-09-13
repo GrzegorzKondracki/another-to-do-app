@@ -11,13 +11,15 @@ class HomePage extends Component {
                 id: 1,
                 text: "nauczyć sie reacta",
                 deadline: '2020-09-13',
-                important: true
+                important: true,
+                active: true
             },
             {
                 id: 2,
-                text: "zmienić pracę",
+                text: "zadanie testowe",
                 deadline: "2020-10-14",
-                important: false
+                important: false,
+                active: true
             }
         ]
     }
@@ -27,7 +29,8 @@ class HomePage extends Component {
             id: this.counter,
             text: text,
             deadline: deadline,
-            important: important
+            important: important,
+            active: true
         }
         this.counter++;
         this.setState((prevState) => ({
@@ -36,13 +39,38 @@ class HomePage extends Component {
 
         return true;
     }
+
+    deleteTask = (id) => {
+        let tasks = [...this.state.tasks];
+        tasks = tasks.filter(task => task.id !== id)
+        this.setState({
+            tasks
+        })
+    }
+
+    doneTask = (id) => {
+        console.log("change w stanie elementu o id " + id);
+
+        const tasks = [...this.state.tasks];
+        tasks.forEach(task => {
+            if (task.id === id) {
+                task.active = false;
+            }
+        })
+        this.setState({
+            tasks
+        })
+    }
+
     render() {
         return (
             <>
                 <div className="mainWrap">
                     <h1>another to do app</h1>
                     <AddTask add={this.addTask} />
-                    <TasksList tasks={this.state.tasks} />
+
+                    <TasksList tasks={this.state.tasks} delete={this.deleteTask} done={this.doneTask} />
+
                 </div>
             </>
         );
