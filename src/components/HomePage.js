@@ -7,20 +7,6 @@ class HomePage extends Component {
     counter = 3;
     state = {
         tasks: [
-            {
-                id: 1,
-                text: "nauczyć sie reacta",
-                deadline: '2020-09-13',
-                important: true,
-                active: true
-            },
-            {
-                id: 2,
-                text: "zadanie testowe",
-                deadline: "2020-10-14",
-                important: false,
-                active: true
-            }
         ]
     }
 
