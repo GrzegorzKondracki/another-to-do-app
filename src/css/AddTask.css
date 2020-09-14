@@ -65,3 +65,7 @@
 .important {
   color: red;
 }
+
+input[type=date] {
+  color: #767676;
+}
