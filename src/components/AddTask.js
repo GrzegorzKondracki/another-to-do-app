@@ -45,6 +45,25 @@ class AddTask extends Component {
         }
     }
 
+
+    enterPressed = (event) => {
+        var code = event.keyCode || event.which;
+        if (code === 13) {
+            console.log('dodaj');
+
+            const { text, deadline, checked } = this.state;
+            const add = this.props.add(text, deadline, checked);
+
+            if (add) {
+                this.setState({
+                    text: '',
+                    deadline: this.minDate,
+                    checked: false
+                })
+            }
+        }
+    }
+
     render() {
         let maxDate = this.minDate.slice(0, 4) * 1 + 1;
         maxDate = maxDate + "-12-31";
@@ -57,7 +76,7 @@ class AddTask extends Component {
                         <div>main panel</div>
 
                         <div className="form">
-                            <input type="text" className="addTaskInput" placeholder="add task" onChange={this.handleText} value={this.state.text} />
+                            <input type="text" className="addTaskInput" placeholder="add task" onChange={this.handleText} value={this.state.text} onKeyPress={this.enterPressed} />
 
                             <input type="date" value={this.state.deadline} min={this.minDate} max={maxDate} onChange={this.handleDate} className="deadline" />
 
@@ -67,7 +86,7 @@ class AddTask extends Component {
                             </div>
                         </div>
 
-                        <div className="newTaskBtn" onClick={this.handleClick}>add task</div>
+                        <div className="newTaskBtn" onClick={this.handleClick} >add task</div>
 
                     </div>
                 </div>
