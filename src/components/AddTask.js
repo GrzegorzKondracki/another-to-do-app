@@ -49,18 +49,7 @@ class AddTask extends Component {
     enterPressed = (event) => {
         var code = event.keyCode || event.which;
         if (code === 13) {
-            console.log('dodaj');
-
-            const { text, deadline, checked } = this.state;
-            const add = this.props.add(text, deadline, checked);
-
-            if (add) {
-                this.setState({
-                    text: '',
-                    deadline: this.minDate,
-                    checked: false
-                })
-            }
+            this.handleClick();
         }
     }
 
@@ -78,10 +67,10 @@ class AddTask extends Component {
                         <div className="form">
                             <input type="text" className="addTaskInput" placeholder="add task" onChange={this.handleText} value={this.state.text} onKeyPress={this.enterPressed} />
 
-                            <input type="date" value={this.state.deadline} min={this.minDate} max={maxDate} onChange={this.handleDate} className="deadline" />
+                            <input type="date" value={this.state.deadline} min={this.minDate} max={maxDate} onChange={this.handleDate} className="deadline" onKeyPress={this.enterPressed} />
 
                             <div className="wrapInsideForm">
-                                <input onChange={this.handleCheckbox} type="checkbox" checked={this.state.checked} className="checkbox" id="checkbox-priority" />
+                                <input onChange={this.handleCheckbox} type="checkbox" checked={this.state.checked} className="checkbox" id="checkbox-priority" onKeyPress={this.enterPressed} />
                                 <label htmlFor="checkbox-priority">important</label>
                             </div>
                         </div>

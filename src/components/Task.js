@@ -19,7 +19,7 @@ const Task = (props) => {
         return (
             <div className="task">
                 <p style={important ? importantStyle : null}>{text}</p>
-                <p style={active ? null : doneStyle}>deadline {deadline}</p>
+                <p style={active ? null : doneStyle}>{deadline}</p>
                 <button onClick={() => props.done(id)} >done</button>
                 <button onClick={() => props.delete(id)} >delete</button>
             </div>

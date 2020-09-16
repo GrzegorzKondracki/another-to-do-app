@@ -11,3 +11,21 @@
 .doneList {
   text-decoration: line-through;
 }
+
+.bar {
+  display: flex;
+  background-color: #00909e;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.bar p {
+  color: #dae1e7;
+  flex-basis: 40%;
+  margin: 0 15px;
+}
+
+.bar button {
+  width: 70px;
+  margin: 0 10px;
+}

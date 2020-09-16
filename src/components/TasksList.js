@@ -22,8 +22,21 @@ const TasksList = (props) => {
 
     return (
         <>
-            <div className="tasksList">
+
+
+            <div>
                 {activeList.length > 0 ? <h2>active tasks</h2> : null}
+                {activeList.length > 0 ? (
+                    <div className="tasksList">
+                        <div className="bar">
+                            <p>task</p>
+                            <p>deadline</p>
+                            <button>sort</button>
+                            <button>search</button>
+                        </div>
+                    </div>
+                ) : null
+                }
                 {activeList.length > 0 ? activeList : <p>nothing to do</p>}
             </div>
 
