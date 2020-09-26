@@ -34,17 +34,20 @@ class AddTask extends Component {
         console.log('dodaj');
 
         const { text, deadline, checked } = this.state;
-        const add = this.props.add(text, deadline, checked);
 
-        if (add) {
-            this.setState({
-                text: '',
-                deadline: this.minDate,
-                checked: false
-            })
+        if (this.state.text !== "") {
+            const add = this.props.add(text, deadline, checked);
+            if (add) {
+                this.setState({
+                    text: '',
+                    deadline: this.minDate,
+                    checked: false
+                })
+            }
+        } else {
+            alert("Write a task name.")
         }
     }
-
 
     enterPressed = (event) => {
         var code = event.keyCode || event.which;
