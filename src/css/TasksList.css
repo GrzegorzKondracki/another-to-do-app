@@ -38,3 +38,8 @@
   outline: none;
   cursor: pointer;
 }
+
+.nothingToDo {
+  color: #dae1e7;
+  font-weight: bold;
+}

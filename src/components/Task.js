@@ -11,8 +11,6 @@ const Task = (props) => {
         textDecoration: 'line-through'
     }
 
-
-
     const { id, text, deadline, important, active } = props.task;
 
     if (active) {

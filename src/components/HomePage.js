@@ -20,7 +20,7 @@ class HomePage extends Component {
         }
         this.counter++;
         this.setState((prevState) => ({
-            tasks: [...prevState.tasks, task]
+            tasks: [task, ...prevState.tasks]
         }))
 
         return true;
@@ -48,6 +48,18 @@ class HomePage extends Component {
         })
     }
 
+    sortTasks = () => {
+        const tasks = [...this.state.tasks];
+        tasks.sort(function (a, b) {
+            if (a.text.toLowerCase() < b.text.toLowerCase()) return -1;
+            if (a.text.toLowerCase() > b.text.toLowerCase()) return 1;
+            return 0;
+        });
+        this.setState({
+            tasks
+        })
+    }
+
     render() {
         return (
             <>
@@ -55,7 +67,7 @@ class HomePage extends Component {
                     <h1>another to do app</h1>
                     <AddTask add={this.addTask} />
 
-                    <TasksList tasks={this.state.tasks} delete={this.deleteTask} done={this.doneTask} />
+                    <TasksList tasks={this.state.tasks} delete={this.deleteTask} done={this.doneTask} sort={this.sortTasks} />
 
                 </div>
             </>

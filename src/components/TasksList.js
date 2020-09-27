@@ -2,13 +2,21 @@ import React from 'react';
 import '../css/TasksList.scss';
 import Task from './Task';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faSort } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faSort, faSortAlphaDown } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 const TasksList = (props) => {
     const tasks = props.tasks
 
     const active = props.tasks.filter(task => task.active);
     const done = props.tasks.filter(task => !task.active);
+
+    if (active.length != 0) {
+
+    }
+
 
     const activeList = active.map(task => {
         return (
@@ -31,13 +39,13 @@ const TasksList = (props) => {
                         <div className="bar">
                             <p>task</p>
                             <p>deadline</p>
-                            <button><FontAwesomeIcon icon={faSort} size="sm" /> sort</button>
-                            <button><FontAwesomeIcon icon={faSearch} size="xs" /> search</button>
+                            <button onClick={props.sort} ><FontAwesomeIcon icon={faSortAlphaDown} size="sm" /> sort</button>
+                            <button><FontAwesomeIcon icon={faSearch} size="sm" /> search</button>
                         </div>
                     </div>
                 ) : null
                 }
-                {activeList.length > 0 ? activeList : <p>nothing to do</p>}
+                {activeList.length > 0 ? activeList : <h2 className="nothingToDo" >nothing to do, add task</h2>}
             </div>
 
             <div className="tasksList">
