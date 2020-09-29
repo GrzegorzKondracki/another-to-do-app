@@ -13,6 +13,13 @@
   padding: 25px;
 }
 
+.main-panel-wrap {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  flex-grow: 1;
+}
+
 .newTaskBtn {
   background-color: #00909e;
   color: #dae1e7;
@@ -68,4 +75,16 @@
 
 input[type=date] {
   color: #767676;
+}
+
+@media (max-width: 850px) {
+  .wrap {
+    flex-direction: column;
+  }
+  .main-panel-wrap {
+    margin: 20px 0;
+  }
+  .form {
+    margin: 20px 0;
+  }
 }

@@ -64,8 +64,10 @@ class AddTask extends Component {
             <>
                 <div className="mainPanel">
                     <div className="wrap">
-                        <FontAwesomeIcon icon={faStream} size="2x" />
-                        <div>main panel</div>
+                        <div className="main-panel-wrap">
+                            <FontAwesomeIcon icon={faStream} size="2x" />
+                            <div>main panel</div>
+                        </div>
 
                         <div className="form">
                             <input type="text" className="addTaskInput" placeholder="add task" onChange={this.handleText} value={this.state.text} onKeyPress={this.enterPressed} />
