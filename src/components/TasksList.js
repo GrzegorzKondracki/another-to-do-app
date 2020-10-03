@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/TasksList.scss';
 import Task from './Task';
+import SearchBar from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSort, faSortAlphaDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -33,14 +34,19 @@ const TasksList = (props) => {
     return (
         <>
             <div>
-                {activeList.length > 0 ? <h2>active tasks</h2> : null}
+                {activeList.length > 0
+                    ? <div className="activeTasksHeadline" >
+                        <h2>active tasks</h2>
+                        <SearchBar />
+                    </div>
+                    : null}
                 {activeList.length > 0 ? (
                     <div className="tasksList">
                         <div className="bar">
                             <p>task</p>
                             <p>deadline</p>
                             <button onClick={props.sort} ><FontAwesomeIcon icon={faSortAlphaDown} size="sm" /> sort</button>
-                            <button><FontAwesomeIcon icon={faSearch} size="sm" /> search</button>
+                            <button onClick={props.search} ><FontAwesomeIcon icon={faSearch} size="sm" /> search</button>
                         </div>
                     </div>
                 ) : null

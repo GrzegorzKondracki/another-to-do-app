@@ -81,9 +81,6 @@ input[type=date] {
   .wrap {
     flex-direction: column;
   }
-  .main-panel-wrap {
-    margin: 20px 0;
-  }
   .form {
     margin: 20px 0;
   }

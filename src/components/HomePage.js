@@ -60,14 +60,17 @@ class HomePage extends Component {
         })
     }
 
+    searchTask = () => {
+        console.log("search works")
+    }
+
     render() {
         return (
             <>
                 <div className="mainWrap">
                     <h1>another to do app</h1>
                     <AddTask add={this.addTask} />
-
-                    <TasksList tasks={this.state.tasks} delete={this.deleteTask} done={this.doneTask} sort={this.sortTasks} />
+                    <TasksList tasks={this.state.tasks} delete={this.deleteTask} done={this.doneTask} sort={this.sortTasks} search={this.searchTask} />
 
                 </div>
             </>
