@@ -6,8 +6,8 @@ import '../css/HomePage.scss';
 class HomePage extends Component {
     counter = 3;
     state = {
-        tasks: [
-        ]
+        tasks: [],
+        inputText: ' '
     }
 
     addTask = (text, deadline, important) => {
@@ -60,8 +60,29 @@ class HomePage extends Component {
         })
     }
 
+    handleText = (e) => {
+        this.setState({
+            inputText: e.target.value
+        })
+    }
+
     searchTask = () => {
         console.log("search works")
+        let tasks = [...this.state.tasks];
+        let search = this.state.inputText.trim().toLowerCase();
+
+        if (search.length > 0) {
+            tasks = tasks.filter(function (task) {
+                return task.text.toLowerCase().match(search);
+            });
+            this.setState({
+                tasks
+            })
+        } else if (search.length == 0) {
+            this.setState({
+                tasks
+            })
+        }
     }
 
     render() {
@@ -70,7 +91,7 @@ class HomePage extends Component {
                 <div className="mainWrap">
                     <h1>another to do app</h1>
                     <AddTask add={this.addTask} />
-                    <TasksList tasks={this.state.tasks} delete={this.deleteTask} done={this.doneTask} sort={this.sortTasks} search={this.searchTask} />
+                    <TasksList tasks={this.state.tasks} delete={this.deleteTask} done={this.doneTask} sort={this.sortTasks} search={this.searchTask} inputText={this.state.inputText} handleText={this.handleText} />
 
                 </div>
             </>

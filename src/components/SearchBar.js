@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-class SearchBar extends Component {
+// class SearchBar extends Component {
 
-    state = {
-        text: '',
-    }
+//     state = {
+//         text: '',
+//     }
 
-    handleText = (e) => {
-        this.setState({
-            text: e.target.value
-        })
-    }
+//     handleText = (e) => {
+//         this.setState({
+//             text: e.target.value
+//         })
+//     }
 
-    render() {
-        return (
-            <>
-                <input className="searchInput" type="text" placeholder="type task name" onChange={this.handleText} value={this.state.text} />
-            </>
-        );
-    }
-}
+//     render() {
+//         return (
+//             <>
+//                 <input className="searchInput" type="text" placeholder="type task name" onChange={this.handleText} value={this.state.text} />
+//             </>
+//         );
+//     }
+// }
 
 
 
-export default SearchBar;
+// export default SearchBar;

@@ -31,13 +31,17 @@ const TasksList = (props) => {
         )
     })
 
+    const searched = active.filter(function (task) {
+
+    })
+
     return (
         <>
             <div>
                 {activeList.length > 0
                     ? <div className="activeTasksHeadline" >
                         <h2>active tasks</h2>
-                        <SearchBar />
+                        <input className="searchInput" type="text" placeholder="type task name" onChange={props.handleText} />
                     </div>
                     : null}
                 {activeList.length > 0 ? (
