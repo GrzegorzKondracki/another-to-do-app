@@ -71,18 +71,19 @@ class HomePage extends Component {
         let tasks = [...this.state.tasks];
         let search = this.state.inputText.trim().toLowerCase();
 
-        if (search.length > 0) {
-            tasks = tasks.filter(function (task) {
-                return task.text.toLowerCase().match(search);
-            });
-            this.setState({
-                tasks
-            })
-        } else if (search.length == 0) {
-            this.setState({
-                tasks
-            })
-        }
+        // if (search.length > 0) {
+        //     searchHandler (event) {
+        //     let serachQuery = event.target.value.toLowerCase(),
+        //         tasks = tasks.filter((task) => {
+        //             let searchValue = task.text.toLowerCase();
+        //             return searchValue.indexOf(serachQuery) !== -1;
+        //             // return task.text.toLowerCase().match(search);
+        //         });
+        //     this.setState({
+        //         tasks
+        //     })
+        // }
+        // }
     }
 
     render() {

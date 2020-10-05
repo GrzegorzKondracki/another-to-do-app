@@ -50,7 +50,7 @@ const TasksList = (props) => {
                             <p>task</p>
                             <p>deadline</p>
                             <button onClick={props.sort} ><FontAwesomeIcon icon={faSortAlphaDown} size="sm" /> sort</button>
-                            <button onClick={props.search} ><FontAwesomeIcon icon={faSearch} size="sm" /> search</button>
+                            <button><FontAwesomeIcon icon={faSearch} size="sm" /> search</button>
                         </div>
                     </div>
                 ) : null
