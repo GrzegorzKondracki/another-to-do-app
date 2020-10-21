@@ -41,7 +41,7 @@ const TasksList = (props) => {
                 {activeList.length > 0
                     ? <div className="activeTasksHeadline" >
                         <h2>active tasks</h2>
-                        <input className="searchInput" type="text" placeholder="type task name" onChange={props.handleText} />
+                        {/* <input className="searchInput" type="text" placeholder="type task name" onChange={props.handleText} /> */}
                     </div>
                     : null}
                 {activeList.length > 0 ? (
@@ -50,7 +50,7 @@ const TasksList = (props) => {
                             <p>task</p>
                             <p>deadline</p>
                             <button onClick={props.sort} ><FontAwesomeIcon icon={faSortAlphaDown} size="sm" /> sort</button>
-                            <button><FontAwesomeIcon icon={faSearch} size="sm" /> search</button>
+                            {/* <button><FontAwesomeIcon icon={faSearch} size="sm" /> search</button> */}
                         </div>
                     </div>
                 ) : null
